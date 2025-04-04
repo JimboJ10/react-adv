@@ -1,11 +1,17 @@
-import { useContext } from 'react';
+import { CSSProperties, useContext } from 'react';
 import styles  from '../styles/styles.module.css';
-import { ProductContext } from './ProductCard';
+import { ProductContext } from '../context/ProductContext';
 
-export const ProductTile = ({title=''}: {title?: string}) => {
+export interface Props {
+    title?: string;
+    className?: string;
+    style?: CSSProperties;
+}
+
+export const ProductTile = ({title, className, style}: Props) => {
     const {product} = useContext(ProductContext);
 
     return (
-        <span className={styles.productDescription}>{title ? title : product.title}</span>
+        <span style={style} className={`${styles.productDescription} ${className} `}>{title ? title : product.title}</span>
     )
 }
