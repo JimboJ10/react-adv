@@ -1,12 +1,11 @@
 import { useProduct } from '../hooks/useProduct';
-import { createContext } from 'react';
-import { ProductContextProps, ProductCardProps, ProductCardHocProps } from '../interfaces/interfaces';
+import { ProductCardProps, ProductCardHocProps } from '../interfaces/interfaces';
 import styles  from '../styles/styles.module.css';
 import { ProductImage } from './ProductImage';
 import { ProductTile } from './ProductTitle';
 import { ProductButtons } from './ProductButtons';
+import { ProductContext } from '../context/ProductContext';
 
-export const ProductContext = createContext({} as ProductContextProps);
 const {Provider} = ProductContext;
 
 export const ProductCard = ({ children, product }:ProductCardProps) => {
