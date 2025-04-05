@@ -16,5 +16,10 @@
     background-color: rgb(56, 56, 56);
     color: white;
     border-radius: 20px;
-    padding: 10px;
+}
+
+.shopping-cart {
+    position: fixed;
+    top: 0px;
+    right: 10px;
 }

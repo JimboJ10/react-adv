@@ -8,8 +8,8 @@ import { ProductContext } from '../context/ProductContext';
 
 const { Provider } = ProductContext;
 
-export const ProductCard = ({ children, product, className, style }:ProductCardProps) => {
-    const { counter, incraseBy } = useProduct();
+export const ProductCard = ({ children, product, className, style, onChange, value }:ProductCardProps) => {
+    const { counter, incraseBy } = useProduct({onChange, product, value});
   return (
     <Provider value={{product, counter, incraseBy}}>
         <div className={`${styles.productCard} ${className}`}
